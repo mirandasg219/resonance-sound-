@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import "./assets/fonts.css";
+
+@layer base {
+  :root {
+    --font-halftone: 'HalftoneJo', 'Orbitron', 'Space Grotesk', 'Syne', sans-serif;
+    --font-heading: 'HalftoneJo', 'Orbitron', 'Space Grotesk', 'Syne', sans-serif;
+    --font-orbitron: 'Orbitron', 'Space Grotesk', sans-serif;
+    --font-futuristic: 'Space Grotesk', 'Orbitron', sans-serif;
+    --font-tech: 'Space Mono', monospace;
+    --font-body: 'Space Grotesk', 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Dark Theme: Black, Grey, White with 3 Purple Accents */
+    --color-bg: #0b0c10;
+    --color-bg-elevated: #13141b;
+    --color-bg-surface: #1a1b24;
+    --color-text: #f3f4f6;
+    --color-text-muted: #9ca3af;
+    --color-lines: #262732;
+
+    /* The 3 Purple Accents */
+    --color-purple-light: #c084fc; /* Accent 1: Light Lavender / Highlight */
+    --color-purple-vivid: #a855f7; /* Accent 2: Vivid Royal Purple / Primary CTA & Markers */
+    --color-purple-deep: #7c3aed;  /* Accent 3: Deep Amethyst / Secondary Glows & Shading */
+    --color-purple-glow: rgba(168, 85, 247, 0.4);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Custom futuristic utility classes */
+.font-halftone {
+  font-family: 'HalftoneJo', 'Orbitron', 'Space Grotesk', 'Syne', sans-serif;
+  letter-spacing: 0.015em;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-futuristic {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-tech {
+  font-family: 'Space Mono', monospace;
+}
+
+.font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+.font-body {
+  font-family: 'Space Grotesk', 'Instrument Sans', sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-lines);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Subtle grid line animation */
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+.animate-coral-pulse {
+  animation: pulseSubtle 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-coral-pulse {
+    animation: none;
+  }
+}
+
+/* Studio Hardware Fader Slider Styling */
+.fader-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #1e202c;
+  border-radius: 2px;
+  border: 1px solid #2a2d3d;
+}
+
+.fader-slider::-moz-range-track {
+  height: 4px;
+  background: #1e202c;
+  border-radius: 2px;
+  border: 1px solid #2a2d3d;
+}
+
+.fader-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 38px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #2c2f3f 0%, #171822 50%, #2c2f3f 100%);
+  border: 1px solid #45495e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: ns-resize;
+  margin-top: -17px;
+}
+
+.fader-slider::-moz-range-thumb {
+  width: 22px;
+  height: 38px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #2c2f3f 0%, #171822 50%, #2c2f3f 100%);
+  border: 1px solid #45495e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: ns-resize;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Resonance Sound Design",
+  "description": "Sound design and mixing studio for games, TV, and film. Interactive spatial project map, immersive Web Audio engine, and studio showcase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
