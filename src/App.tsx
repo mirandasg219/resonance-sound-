@@ -20,7 +20,6 @@ import { StudioPage } from './pages/StudioPage';
 import { ContactPage } from './pages/ContactPage';
 import { SiteContentEditorModal } from './components/SiteContentEditorModal';
 import { BaseAudioModal } from './components/BaseAudioModal';
-import { PermanentProjectsSync } from './components/PermanentProjectsSync';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
@@ -153,9 +152,6 @@ export default function App() {
         isOpen={isAudioModalOpen}
         onClose={() => setIsAudioModalOpen(false)}
       />
-
-      {/* Auto-commit local projects to source code */}
-      <PermanentProjectsSync />
     </div>
   );
 }
